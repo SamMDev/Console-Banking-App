@@ -46,6 +46,7 @@ public class BalanceDao {
             statement.setDouble(2, amount);
             statement.execute();
         } catch (SQLException e) {
+            System.err.println(e);
             throw new FailedToCreateRecordException("Failed to create balance record!");
         }
     }

@@ -19,7 +19,7 @@ import static com.sammdev.db.config.DbConfig.DB_USER;
 
 public class CustomerDao {
 
-    private static CustomerDao instance = new CustomerDao();
+    private static final CustomerDao instance = new CustomerDao();
 
     private Connection connection;
 
@@ -45,7 +45,7 @@ public class CustomerDao {
         int returnValue = 0;
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select count(*) from customers");
+            ResultSet resultSet = statement.executeQuery("select max(id) from customers");
             resultSet.next();
             returnValue = resultSet.getInt(1);
             statement.close();
@@ -72,6 +72,7 @@ public class CustomerDao {
             statement.setString(6, newCustomer.getPassword());
             statement.execute();
         } catch (SQLException e) {
+            System.out.println(e);
             throw new FailedToCreateRecordException("Failed to create customer!");
         }
     }
