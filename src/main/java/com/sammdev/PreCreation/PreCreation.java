@@ -7,8 +7,6 @@ import com.sammdev.service.CustomerService;
 
 import static com.sammdev.PreCreation.RandomNames.*;
 
-import java.util.ArrayList;
-
 public class PreCreation {
     private CustomerService customerService;
     private BankingService bankingService;
