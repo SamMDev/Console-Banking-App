@@ -1,4 +1,4 @@
-package com.sammdev.PreCreation;
+package com.sammdev.preCreation;
 
 public class RandomNames {
     public static final String[] FIRST_NAMES = {"Samuel", "Denis", "Michal", "Jan", "Russell", "James", "Seth",

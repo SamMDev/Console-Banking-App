@@ -1,11 +1,11 @@
-package com.sammdev.PreCreation;
+package com.sammdev.preCreation;
 
 import com.sammdev.db.model.Customer;
 import com.sammdev.exception.FailedToCreateRecordException;
 import com.sammdev.service.BankingService;
 import com.sammdev.service.CustomerService;
 
-import static com.sammdev.PreCreation.RandomNames.*;
+import static com.sammdev.preCreation.RandomNames.*;
 
 public class PreCreation {
     private CustomerService customerService;
@@ -53,7 +53,7 @@ public class PreCreation {
         String address = "";
         String password = bankingService.getHash("admin");
 
-        return new Customer(id, firstName, lastName, email, address, password);
+        return new Customer(id, firstName, lastName, address, email, password);
     }
 
 

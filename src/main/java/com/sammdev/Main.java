@@ -1,6 +1,6 @@
 package com.sammdev;
 
-import com.sammdev.PreCreation.PreCreation;
+import com.sammdev.preCreation.PreCreation;
 import com.sammdev.service.BankingService;
 
 public class Main {
