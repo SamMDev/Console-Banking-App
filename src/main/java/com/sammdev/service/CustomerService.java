@@ -21,6 +21,11 @@ public class CustomerService {
     private final BalanceDao balanceDao = BalanceDao.getInstance();
     private final PaymentDao paymentDAO = PaymentDao.getInstance();
 
+    private static final CustomerService customerService = new CustomerService();
+    private CustomerService(){}
+    public static CustomerService getInstance(){
+        return customerService;
+    }
 
     /**
      * Finds a customer by matching his username (email) and password

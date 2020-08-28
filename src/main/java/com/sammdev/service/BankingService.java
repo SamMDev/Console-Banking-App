@@ -20,9 +20,8 @@ public class BankingService {
     private Customer activeCustomer;
 
     public BankingService() {
-        customerService = new CustomerService();
+        customerService = CustomerService.getInstance();
     }
-
 
     /**
      * Generates SHA-512 hash
@@ -167,11 +166,11 @@ public class BankingService {
     private void logIn() {
         String email, password;
         scanner.nextLine();
-        email = askUserToEnterValue("email").toLowerCase();
+        email = askUserToEnterValue("email");
         password = getHash(askUserToEnterValue("password"));
 
         try {
-            activeCustomer = customerService.login(email, password);
+            activeCustomer = customerService.login(email.toLowerCase(), password);
             customerChoices();
         } catch (LoginFailedException e) {
             System.out.println("Customer not found. E-mail or password is incorrect");

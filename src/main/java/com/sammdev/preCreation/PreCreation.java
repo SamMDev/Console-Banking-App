@@ -14,7 +14,7 @@ public class PreCreation {
     private int numOfNewCustomers = 10;
 
     public PreCreation(){
-        customerService = new CustomerService();
+        customerService = CustomerService.getInstance();
         bankingService = new BankingService();
     }
 
